@@ -5,7 +5,7 @@
 namespace game::Rendering
 {
 
-void DebugWindow::Draw()
+void DrawDebugWindow()
 {
 	ImGui::Text("Hi!");
 }

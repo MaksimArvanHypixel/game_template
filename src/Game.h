@@ -2,8 +2,6 @@
 
 #include <flecs.h>
 
-#include "Rendering/Renderer.h"
-
 namespace game
 {
 
@@ -15,7 +13,6 @@ public:
 
 private:
 	flecs::world mEcs{};
-	Rendering::Renderer mRenderer;
 };
 
 } // namespace game

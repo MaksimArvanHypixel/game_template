@@ -4,10 +4,6 @@
 namespace game::Rendering
 {
 
-class DebugWindow
-{
-public:
-	static void Draw();
-};
+void DrawDebugWindow();
 
 } // namespace game::Rendering

@@ -9,7 +9,11 @@
 namespace game::Rendering
 {
 
-Renderer::Renderer(const flecs::world& ecs)
+static void PreDraw(const flecs::iter& iter, int index);
+static void DrawDebug(const flecs::iter& iter, int index);
+static void PostDraw(const flecs::iter& iter, int index);
+
+void Init(const flecs::world& ecs)
 {
 	InitWindow(WIDTH, HEIGHT, TITLE);
 	SetTargetFPS(FPS);
@@ -29,7 +33,7 @@ Renderer::Renderer(const flecs::world& ecs)
 			.each(PostDraw);
 }
 
-void Renderer::PreDraw(const flecs::iter& iter, int index)
+void PreDraw(const flecs::iter& iter, int index)
 {
 	BeginDrawing();
 	rlImGuiBegin();
@@ -37,19 +41,19 @@ void Renderer::PreDraw(const flecs::iter& iter, int index)
 	ClearBackground(WHITE);
 }
 
-void Renderer::DrawDebug(const flecs::iter& iter, int index)
+void DrawDebug(const flecs::iter& iter, int index)
 {
 	DrawFPS(0, 0);
 
 	flecs::world ecs = iter.world();
 
-	DebugWindow::Draw();
+	DrawDebugWindow();
 
 	// Keeping this commented to have it at hand easily when we need to look at the demo window.
 //	ImGui::ShowDemoWindow();
 }
 
-void Renderer::PostDraw(const flecs::iter& iter, int index)
+void PostDraw(const flecs::iter& iter, int index)
 {
 	rlImGuiEnd();
 	EndDrawing();
