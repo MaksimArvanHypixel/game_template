@@ -5,7 +5,7 @@
 int main()
 {
 	game::Game game{};
-	game.Start();
+	game.Update();
 
 	return 0;
 }
