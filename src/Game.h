@@ -9,10 +9,12 @@ class Game
 {
 public:
 	explicit Game();
-	void Start();
+
+	void Init();
+	void Update();
 
 private:
-	flecs::world mEcs{};
+	flecs::world mEcsWorld{};
 };
 
 } // namespace game

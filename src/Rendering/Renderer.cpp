@@ -15,7 +15,7 @@ static void PostDraw(const flecs::iter& iter, int index);
 
 void Init(const flecs::world& ecs)
 {
-	InitWindow(WIDTH, HEIGHT, TITLE);
+	InitWindow(VIEWPORT_WIDTH, VIEWPORT_HEIGHT, TITLE);
 	SetTargetFPS(FPS);
 
 	rlImGuiSetup(true);
@@ -45,12 +45,12 @@ void DrawDebug(const flecs::iter& iter, int index)
 {
 	DrawFPS(0, 0);
 
-	flecs::world ecs = iter.world();
+	//flecs::world ecs = iter.world();
 
-	DrawDebugWindow();
+	//DrawDebugWindow();
 
 	// Keeping this commented to have it at hand easily when we need to look at the demo window.
-//	ImGui::ShowDemoWindow();
+	//ImGui::ShowDemoWindow();
 }
 
 void PostDraw(const flecs::iter& iter, int index)
